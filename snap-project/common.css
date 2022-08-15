@@ -1,34 +1,38 @@
 .container {
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  margin: auto;
+  /* padding: 30px; */
+  margin: 4em;
+  justify-content: center;
 }
 
-.snap_image {
-  background-image: url("../images/image-hero-desktop.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 60%;
-  width: 30%;
+.snap_image img {
+  margin-top: 0;
+  height: 350px;
+  width: 400px;
+  /* margin-left: -50px; */
 }
-.typo_section h1 {
-  height: 40%;
-  width: 50%;
+
+.typo_section {
+  display: flex;
+  flex-direction: column;
+  height: 65px;
+  width: 35%;
   font-weight: bold;
   color: hsl(0, 0%, 8%);
+  margin-left: 2opx;
 }
 
 .typo_section p {
   height: 30px;
-  width: 50%;
+  width: 60%;
   color: hsl(0, 0%, 8%);
 }
 .typo_section button {
   color: hsl(0, 0%, 98%);
   background-color: hsl(0, 0%, 8%);
   border-radius: 4px;
-  height: 20%;
-  width: 22%;
-  margin-bottom: 10px;
+  height: 2%;
+  width: 75px;
+  margin-bottom: 0px;
 }
