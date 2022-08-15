@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* -------------------------------------------------General ------------------------------------------------ */
+:root {
+  font-size: 10px;
+
+  /* -------------------------------------------------------------------------- Colors ---------------------*/
+
+  /* hsl: s:saturation, l:light a:alpha channel
+  m = modified
+  l = light
+  d = dark */
+
+  --color-primary: hsl(232, 15%, 19%);
+  --color-primary-m-l: hsla(231, 15%, 19%, 0.55);
+  --color-primary-m-d: hsla(231, 15%, 19%, 0.85);
+
+  --color-secondary: rgb(255, 170, 6);
+  --color-secondary-m-l: rgba(255, 170, 6, 0.55);
+  --color-secondary-m-d: rgba(255, 170, 6, 0.85);
+
+  --color-tertiary: hsl(211, 68%, 32%);
+  --color-tertiary-m-l: hsla(211, 68%, 32%, 0.55);
+  --color-tertiary-m-d: hsla(211, 68%, 32%, 0.85);
+
+  --color-quarternary: rgb(231, 231, 230);
+  --color-quarternary-m-l: rgba(231, 231, 230, 0.55);
+  --color-quarternary-m-d: rgba(231, 231, 230, 0.85);
+
+  /* ------------------------------------------------------ Padding -------------------------------------- */
+
+  --padding-xl: calc(2rem + 6vh) calc(2rem + 6vw);
+  --padding-large: calc(3rem + 4vh) calc(3rem + 4vw);
+  --padding-medium: calc(2rem + 2vh) calc(2rem + 2vw);
+  --padding-small: calc(1rem + 1vh) calc(1rem + 1vw);
+
+  /*-------------------------------------Font size------------------------------------------------------ */
+
+  --font-size-l: calc(1.5rem + 2w);
+  --font-size-m: calc(1rem + 1.5w);
+  --font-size-s: calc(1rem + 1w);
+  --font-size-xs: calc(0.5rem + 0.8w);
+
+  /*------------------------------------------------------------- Font Family------------------------------*/
+
+  --font-family-main: "Fredoka", sans-serif;
+  --font-family-sub: "poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-family-sub);
+  line-height: 1.5;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 11rem) [col-end]
+    )
+    [center-end] 1fr [container-end];
+  /* width of webpage/no of intended colums  then divide by unit standard value*/
+
+  grid-template-rows: repeat(6, min-content);
+  background-color: var(--color-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-quarternary);
+}
+
+li {
+  list-style: none;
+}
+/*------------------------------------------------------------------ Header styles -------------------------------- */
+#main-header {
+  background-color: var(--color-primary);
+  grid-column: center-start / center-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-small);
+  position: relative;
+}
+.main-header__logo h2 {
+  font-size: 3rem;
+  color: var(--color-quarternary);
+  font-family: var(--font-family-main);
+}
+
+.main-header__logo span {
+  color: var(--color-secondary);
+}
+.main-header__nav {
+  width: 80%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.hamburger {
+  z-index: 1;
+}
+.main-header--nav-links {
+  display: flex;
+  gap: calc(0.5rem + 1vw);
+  align-items: center;
+}
+.main-header--nav-links a {
+  font-size: 1.5rem;
+  padding: 1.5rem, 2.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.main-header--nav-links a:hover {
+  background-color: var(--color-secondary);
+}
+.main-header__nav-reg {
+  display: flex;
+  gap: 1rem;
+}
+.main-header__nav-reg a {
+  font-size: 1.5rem;
+  padding: 1.5rem 2.5rem;
+}
+.main-header__nav-reg a:nth-child(2) {
+  background-color: var(--color-secondary);
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  /*---------------------------------------------------- hamburger menu --------------------------------- */
+
+  .hamburger {
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 3rem;
+    right: 7rem;
+    padding: 0.6rem;
+    cursor: pointer;
+  }
+
+  /*----------------------------------------------- hamburger menu lines------------------------------ */
+
+  .hamburger__line {
+    position: absolute;
+    background-color: var(--color-quarternary);
+    height: 0.3rem;
+    width: 3rem;
+  }
+
+  .hamburger__line:first-child {
+    width: 6rem;
+    top: 0;
+    left: 0;
+    transition: all 0.35s ease-in-out;
+  }
+
+  .hamburger__line:nth-child(2) {
+    top: 1rem;
+    width: 2.5rem;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .hamburger__line:last-child {
+    top: 2rem;
+    width: 4.5rem;
+    left: 0;
+    transition: all 0.35s ease-in-out;
+  }
+
+  /* ----------------------------------------------------------- Toggling Nav Bar ---------------------------- */
+
+  .line-1 {
+    transform: rotate(45deg) translate(0.3rem, 1.4rem);
+    width: 3.5rem !important;
+  }
+
+  .line-2 {
+    visibility: hidden;
+  }
+  .line-3 {
+    transform: rotate(-45deg) translate(0, -1.15rem);
+    width: 3.5rem !important;
+  }
+  .block-visible {
+    transform: translate(0);
+  }
+
+  /*------------------------------------------------- Navlinks --------------------------------------------*/
+
+  .main-header__nav,
+  .main-header--nav-links,
+  .main-header__nav-reg {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .main-header__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 4rem;
+    height: 100vh;
+    width: 300px;
+    background-color: var(--color-primary);
+    transform: translateX(100rem);
+    transition: all 0.55s cubic-bezier(1, 0, 0, 1);
+  }
+}
+#hero {
+  height: 400px;
+  color: white;
+  background-color: var(--color-tertiary);
+  grid-column: center-start / center-end;
+}
+
+#feature {
+  height: 400px;
+  color: white;
+  background-color: var(--color-quarternary);
+  grid-column: center-start / center-end;
+}
+#diversify {
+  height: 400px;
+  color: white;
+  background-color: var(--color-secondary);
+  grid-column: center-start / center-end;
+}
+#testimonials {
+  height: 400px;
+  color: white;
+  background-color: var(--color-secondary);
+  grid-column: center-start / center-end;
+}
+
+#footer {
+  height: 400px;
+  color: white;
+  background-color: var(--color-quarternary);
+  grid-column: container-start / container-end;
+}

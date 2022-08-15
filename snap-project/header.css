@@ -1,0 +1,46 @@
+body {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 98%);
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+nav ul,
+nav h4 {
+  list-style: none;
+  width: 10%;
+  height: 25%;
+  font-size: 12px;
+  color: hsl(0, 0%, 8%);
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+nav h4,
+.navbar span {
+  /* position: absolute; */
+  /* justify-self: flex-start; */
+  margin-right: 0;
+}
+
+.navbar span {
+  margin-right: 0;
+  margin-top: 0%;
+  border: 1px solid hsl(0, 0%, 8%);
+  border-radius: 3px;
+  height: 20px;
+  width: 8%;
+  font-size: 15px;
+  color: hsl(0, 0%, 8%);
+}
+.logo {
+  background-image: url("../images/logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 3%;
+  width: 3%;
+}

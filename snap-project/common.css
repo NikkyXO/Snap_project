@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: auto;
+}
+
+.snap_image {
+  background-image: url("../images/image-hero-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 60%;
+  width: 30%;
+}
+.typo_section h1 {
+  height: 40%;
+  width: 50%;
+  font-weight: bold;
+  color: hsl(0, 0%, 8%);
+}
+
+.typo_section p {
+  height: 30px;
+  width: 50%;
+  color: hsl(0, 0%, 8%);
+}
+.typo_section button {
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 8%);
+  border-radius: 4px;
+  height: 20%;
+  width: 22%;
+  margin-bottom: 10px;
+}
